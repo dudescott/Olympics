@@ -23,6 +23,7 @@ def create_db():
 
 
 def run_driver():
+    os.system('cls||clear')
     conn = sql.connect('../data/olympics.db')
     c = conn.cursor()
     option = ''
@@ -39,7 +40,8 @@ def run_driver():
             option = int(option)
         except:
             print('Invalid Input!')
-
+        
+        os.system('cls||clear')
         if option == 0:
             return
         elif option == 1:
@@ -54,6 +56,6 @@ def run_driver():
             print('Invalid Input!')
 
 if __name__ == '__main__':
-    if not os.path.exists('data/olympics.db'):
+    if not os.path.exists('../data/olympics.db'):
         create_db()
     run_driver()
